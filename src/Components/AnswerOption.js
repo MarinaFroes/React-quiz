@@ -7,10 +7,15 @@ const AnswerOption = ({ answer, correctAnswer }) => (
       type="radio"
       className="radioCustomButton"
       name="radioGroup"
-      checked={answer === correctAnswer}
       id={answer}
       value={answer}
-      disabled={answer}
+      onChange={e => {
+        if (e.target.value === correctAnswer) {
+          console.log(true);
+        } else {
+          console.log(false);
+        }
+      }}
     />
     <label className="radioCustomLabel" htmlFor={answer}>
       {answer}
