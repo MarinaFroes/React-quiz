@@ -7,7 +7,7 @@ export const allQuestions = [
       b: "Lucios",
       c: "Sirius"
     },
-    correctAnswer: "a: James"
+    correctAnswer: "James"
   },
   {
     questionId: 2,
@@ -17,7 +17,7 @@ export const allQuestions = [
       b: "Lilian",
       c: "Sibila"
     },
-    correctAnswer: "b: Lilian"
+    correctAnswer: "Lilian"
   },
   {
     questionId: 3,
@@ -27,7 +27,7 @@ export const allQuestions = [
       b: "Gryffindor",
       c: "Ravenclaw"
     },
-    correctAnswer: "b: Gryffindor"
+    correctAnswer: "Gryffindor"
   },
   {
     questionId: 4,
@@ -37,7 +37,7 @@ export const allQuestions = [
       b: "Neville and Gina",
       c: "Rony and Hermione"
     },
-    correctAnswer: "c: Rony and Hermione"
+    correctAnswer: "Rony and Hermione"
   },
   {
     questionId: 5,
@@ -47,7 +47,7 @@ export const allQuestions = [
       b: "Alohomora",
       c: "Accio"
     },
-    correctAnswer: "c: Accio"
+    correctAnswer: "Accio"
   },
   {
     questionId: 6,
@@ -57,7 +57,7 @@ export const allQuestions = [
       b: "Appare Vestigium",
       c: "Cruciatus"
     },
-    correctAnswer: "b: Appare Vestigium"
+    correctAnswer: "Appare Vestigium"
   },
   {
     questionId: 7,
@@ -67,7 +67,7 @@ export const allQuestions = [
       b: "in Hogsmeade Village",
       c: "Privet Drive street"
     },
-    correctAnswer: "a: behind the Leaky Cauldron"
+    correctAnswer: "behind the Leaky Cauldron"
   },
   {
     questionId: 8,
@@ -77,7 +77,7 @@ export const allQuestions = [
       b: "Salazar",
       c: "Lucius"
     },
-    correctAnswer: "a: Marvolo"
+    correctAnswer: "Marvolo"
   },
   {
     questionId: 9,
@@ -88,7 +88,7 @@ export const allQuestions = [
       b: "Hippogriffs",
       c: "Centaurs"
     },
-    correctAnswer: "b: Hippogriffs"
+    correctAnswer: "Hippogriffs"
   },
   {
     questionId: 10,
@@ -98,6 +98,6 @@ export const allQuestions = [
       b: "The Elder Wand",
       c: "Vine and dragon heartstring"
     },
-    correctAnswer: "a: Holly and phoenix feather"
+    correctAnswer: "Holly and phoenix feather"
   }
 ];
