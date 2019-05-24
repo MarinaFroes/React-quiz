@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const Question = ({text}) => (
+const Question = ({content}) => (
   <div>
-    <p>{text}</p>
+    <p>{content}</p>
   </div>
 );
-
 
 export default Question;
