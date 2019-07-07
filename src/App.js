@@ -5,12 +5,12 @@ import QuestionCount from "./Components/QuestionCount";
 import AnswerOption from "./Components/AnswerOption";
 import { allQuestions } from "./Components/allQuestions";
 
-class App extends React.Component() {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       counter: 0,
-      questionId: 1,
+      questionId: 0,
       question: "",
       answerOptions: [],
       answer: "",
@@ -30,32 +30,42 @@ class App extends React.Component() {
     console.log(this.state.question);
     console.log(this.state.answerOptions);
   }
+  
+  getQuestion = () => {
+    if (this.state.questionId < 10) {
+      return allQuestions[this.state.questionId];
+    }
+    return;
+  }
 
   render() {
     return (
       <div className="App">
-        {allQuestions.map(question => (
-          <div key={question.questionId}>
+        { this.state.questionId < 10 &&
+          (<div key={this.getQuestion()}>
             <QuestionCount
-              counter={question.questionId}
+              counter={this.state.questionId + 1}
               total={allQuestions.length}
             />
-            <Question content={question.question} />
-
+            <Question content={this.getQuestion()["question"]} />
             <AnswerOption
-              answer={question.answerOptions["a"]}
-              correctAnswer={question.correctAnswer}
+              answer={this.getQuestion().answerOptions["a"]}
+              correctAnswer={this.getQuestion().correctAnswer}
             />
             <AnswerOption
-              answer={question.answerOptions["b"]}
-              correctAnswer={question.correctAnswer}
+              answer={this.getQuestion().answerOptions["b"]}
+              correctAnswer={this.getQuestion().correctAnswer}
             />
             <AnswerOption
-              answer={question.answerOptions["c"]}
-              correctAnswer={question.correctAnswer}
+              answer={this.getQuestion().answerOptions["c"]}
+              correctAnswer={this.getQuestion().correctAnswer}
             />
-          </div>
-        ))}
+          </div>)
+        }
+        <button onClick={() => this.setState((prevState, props) => ({
+          questionId: prevState.questionId + 1
+        }))}>Next</button>
+        {console.log(`question Id: ${this.state.questionId}`)}
       </div>
     );
   }
