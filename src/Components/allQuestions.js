@@ -1,6 +1,6 @@
 export const allQuestions = [
   {
-    questionId: 1,
+    questionId: 0,
     question: "What is the first name of Harry Potter's father?",
     answerOptions: {
       a: "James",
@@ -10,7 +10,7 @@ export const allQuestions = [
     correctAnswer: "James"
   },
   {
-    questionId: 2,
+    questionId: 1,
     question: "What is the first name of Harry Potter's mother?",
     answerOptions: {
       a: "Minerva",
@@ -20,7 +20,7 @@ export const allQuestions = [
     correctAnswer: "Lilian"
   },
   {
-    questionId: 3,
+    questionId: 2,
     question: "Harry Potter is from which Hogwarts' house?",
     answerOptions: {
       a: "Slytherin",
@@ -30,7 +30,7 @@ export const allQuestions = [
     correctAnswer: "Gryffindor"
   },
   {
-    questionId: 4,
+    questionId: 3,
     question: "Who are Harry's best friends?",
     answerOptions: {
       a: "Draco and Rowena",
@@ -40,7 +40,7 @@ export const allQuestions = [
     correctAnswer: "Rony and Hermione"
   },
   {
-    questionId: 5,
+    questionId: 4,
     question: "Which spell causes an object to fly to the caster?",
     answerOptions: {
       a: "Aguamenti",
@@ -50,7 +50,7 @@ export const allQuestions = [
     correctAnswer: "Accio"
   },
   {
-    questionId: 6,
+    questionId: 5,
     question: "Which is not one of the Unforgivable Curses?",
     answerOptions: {
       a: "Avada Kedavra",
@@ -60,7 +60,7 @@ export const allQuestions = [
     correctAnswer: "Appare Vestigium"
   },
   {
-    questionId: 7,
+    questionId: 6,
     question: "Where is the entrance to the Diagon Alley?",
     answerOptions: {
       a: "behind the Leaky Cauldron",
@@ -70,7 +70,7 @@ export const allQuestions = [
     correctAnswer: "behind the Leaky Cauldron"
   },
   {
-    questionId: 8,
+    questionId: 7,
     question: "What is the middle name of Lord Voldemort?",
     answerOptions: {
       a: "Marvolo",
@@ -80,7 +80,7 @@ export const allQuestions = [
     correctAnswer: "Marvolo"
   },
   {
-    questionId: 9,
+    questionId: 8,
     question:
       "Which creature has the body of a horse and head, wings, and forelegs of an eagle ?",
     answerOptions: {
@@ -91,7 +91,7 @@ export const allQuestions = [
     correctAnswer: "Hippogriffs"
   },
   {
-    questionId: 10,
+    questionId: 9,
     question: "Which is Harry's wand?",
     answerOptions: {
       a: "Holly and phoenix feather",
