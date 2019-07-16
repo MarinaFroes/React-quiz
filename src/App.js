@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import Question from "./Components/Question";
+// import Question from "./Components/Question";
 import QuestionCount from "./Components/QuestionCount";
-import AnswerOption from "./Components/AnswerOption";
+// import AnswerOption from "./Components/AnswerOption";
 import { allQuestions } from "./Components/allQuestions";
+import Quiz from "./Components/Quiz";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,10 +15,7 @@ class App extends React.Component {
       question: "",
       answerOptions: [],
       answer: "",
-      answersCount: {
-        correct: 0,
-        incorrect: 0
-      },
+      correctAnswers: 0,
       result: ""
     };
   }
@@ -27,8 +25,8 @@ class App extends React.Component {
       question: allQuestions[0].question,
       answerOptions: allQuestions[0].answerOptions
     });
-    console.log(this.state.question);
-    console.log(this.state.answerOptions);
+    // console.log(this.state.question);
+    // console.log(this.state.answerOptions);
   }
   
   getQuestion = () => {
@@ -36,6 +34,14 @@ class App extends React.Component {
       return allQuestions[this.state.questionId];
     }
     return;
+  }
+
+  checkAnswer = (answer) => {
+    if (answer) {
+      this.setState((prevState, props) => ({
+        correctAnswers: prevState.correctAnswers + 1
+      }));
+    }
   }
 
   render() {
@@ -47,25 +53,18 @@ class App extends React.Component {
               counter={this.state.questionId + 1}
               total={allQuestions.length}
             />
-            <Question content={this.getQuestion()["question"]} />
-            <AnswerOption
-              answer={this.getQuestion().answerOptions["a"]}
-              correctAnswer={this.getQuestion().correctAnswer}
-            />
-            <AnswerOption
-              answer={this.getQuestion().answerOptions["b"]}
-              correctAnswer={this.getQuestion().correctAnswer}
-            />
-            <AnswerOption
-              answer={this.getQuestion().answerOptions["c"]}
-              correctAnswer={this.getQuestion().correctAnswer}
+          <Quiz
+            getQuestion={this.getQuestion()}
+            checkAnswer={this.checkAnswer}
             />
           </div>)
         }
         <button onClick={() => this.setState((prevState, props) => ({
           questionId: prevState.questionId + 1
         }))}>Next</button>
-        {console.log(`question Id: ${this.state.questionId}`)}
+        {/* {console.log(`question Id: ${this.state.questionId}`)} */}
+        {console.log(`correct answers: ${this.state.correctAnswers}`)}
+        
       </div>
     );
   }
