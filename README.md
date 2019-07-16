@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## References
+
+- Based on the [Create a quiz with React](https://medium.com/@joshuaaguilar20/create-a-quiz-with-react-6bd826c04f6) by Joshua Aguilar.
+- [Radio buttons in React 16](https://react.tips/radio-buttons-in-react-16/)
