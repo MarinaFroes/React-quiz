@@ -36,12 +36,19 @@ class App extends React.Component {
     return;
   }
 
-  checkAnswer = (answer) => {
+  checkAnswer = answer => {
     if (answer) {
       this.setState((prevState, props) => ({
         correctAnswers: prevState.correctAnswers + 1
       }));
     }
+  }
+
+  onSubmit = e => {
+    e.preventDefault();
+    this.setState((prevState, props) => ({
+      questionId: prevState.questionId + 1
+    }))
   }
 
   render() {
@@ -56,13 +63,11 @@ class App extends React.Component {
           <Quiz
             getQuestion={this.getQuestion()}
             checkAnswer={this.checkAnswer}
+            onSubmit={this.onSubmit}
             />
           </div>)
         }
-        <button onClick={() => this.setState((prevState, props) => ({
-          questionId: prevState.questionId + 1
-        }))}>Next</button>
-        {/* {console.log(`question Id: ${this.state.questionId}`)} */}
+        
         {console.log(`correct answers: ${this.state.correctAnswers}`)}
         
       </div>
