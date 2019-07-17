@@ -10,19 +10,22 @@ const Quiz = ({ getQuestion, checkAnswer, onSubmit }) => (
       answer={getQuestion.answerOptions["a"]}
       correctAnswer={getQuestion.correctAnswer}
       checkAnswer={checkAnswer}
-      checked={true}
+      isChecked={true}
+      option="optionA"
     />
     <AnswerOption
       answer={getQuestion.answerOptions["b"]}
       correctAnswer={getQuestion.correctAnswer}
       checkAnswer={checkAnswer}
-      checked={false}
+      isChecked={false}
+      option="optionB"
     />
     <AnswerOption
       answer={getQuestion.answerOptions["c"]}
       correctAnswer={getQuestion.correctAnswer}
       checkAnswer={checkAnswer}
-      checked={false}
+      isChecked={false}
+      option="optionC"
     />
     <button type="submit" onClick={onSubmit}>Next</button>
   </form>
