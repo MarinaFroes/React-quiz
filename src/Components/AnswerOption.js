@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AnswerOption = ({ answer, correctAnswer, checkAnswer }) => (
+const AnswerOption = ({ answer, correctAnswer, checkAnswer, isChecked }) => (
   <li className="answerOption">
     <input
       type="radio"
@@ -9,6 +9,7 @@ const AnswerOption = ({ answer, correctAnswer, checkAnswer }) => (
       name="radioGroup"
       id={answer}
       value={answer}
+      checked={isChecked}
       onChange={e => {
         if (e.target.value === correctAnswer) {
           checkAnswer(true);
