@@ -9,7 +9,6 @@ class App extends React.Component {
     counter: 0,
     questionId: 0,
     question: "",
-
     answer: "",
     correctAnswers: 0
   };
@@ -20,8 +19,7 @@ class App extends React.Component {
     });
   }
 
-  getQuestion = () =>
-    this.state.questionId < 10 && allQuestions[this.state.questionId];
+  getQuestion = () => (this.state.questionId < 10 && allQuestions[this.state.questionId]);
 
   checkAnswer = answer => {
     if (answer) {
