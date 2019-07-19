@@ -26,6 +26,7 @@ const AnswerOption = ({
           console.log(false);
           checkAnswer(false);
         }
+        
       }}
     />
     <label className="radioCustomLabel" htmlFor={answer}>
@@ -39,5 +40,7 @@ export default AnswerOption;
 AnswerOption.propTypes = {
   answer: PropTypes.string.isRequired,
   correctAnswer: PropTypes.string.isRequired,
-  checkAnswer: PropTypes.func.isRequired
+  checkAnswer: PropTypes.func.isRequired,
+  option: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired
 };
