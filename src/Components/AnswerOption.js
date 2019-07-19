@@ -9,27 +9,26 @@ const AnswerOption = ({
   option
 }) => (
   <li className="answerOption">
-    <input
-      type="radio"
-      className="radioCustomButton"
-      name="radioGroup"
-      id={option}
-      value={answer}
-      checked={isChecked}
-      onChange={e => {
-        console.log(`Selected: ${e.target.value}`);
-        console.log(`Correct: ${correctAnswer}`);
-        if (e.target.value === correctAnswer) {
-          checkAnswer(true);
-          console.log(true);
-        } else {
-          console.log(false);
-          checkAnswer(false);
-        }
-        
-      }}
-    />
-    <label className="radioCustomLabel" htmlFor={answer}>
+    <label className="radioCustomLabel">
+      <input
+        type="radio"
+        className="radioCustomButton"
+        name="radioGroup"
+        id={option}
+        value={answer}
+        checked={isChecked}
+        onClick={e => {
+          console.log(`Selected: ${e.target.value}`);
+          console.log(`Correct: ${correctAnswer}`);
+          if (e.target.value === correctAnswer) {
+            checkAnswer(true);
+            console.log(true);
+          } else {
+            console.log(false);
+            checkAnswer(false);
+          }
+        }}
+      />
       {answer}
     </label>
   </li>
