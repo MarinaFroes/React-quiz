@@ -44,13 +44,13 @@ class App extends React.Component {
     }
   }
 
-  onSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
     this.setState((prevState, props) => ({
       questionId: prevState.questionId + 1
     }))
   }
-
+  
   render() {
     return (
       <div className="App">
@@ -63,7 +63,7 @@ class App extends React.Component {
           <Quiz
             getQuestion={this.getQuestion()}
             checkAnswer={this.checkAnswer}
-            onSubmit={this.onSubmit}
+            onSubmit={this.handleSubmit}
             />
           </div>)
         }
