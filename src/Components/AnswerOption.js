@@ -8,11 +8,10 @@ const AnswerOption = ({
   isChecked,
   option
 }) => (
-  <li className="answerOption">
-    <label className="radioCustomLabel">
+  <li>
+    <label>
       <input
         type="radio"
-        className="radioCustomButton"
         name="radioGroup"
         id={option}
         value={answer}
