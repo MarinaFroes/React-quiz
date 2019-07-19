@@ -1,16 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AnswerOption = ({ answer, correctAnswer, checkAnswer, isChecked, option }) => (
+const AnswerOption = ({
+  answer,
+  correctAnswer,
+  checkAnswer,
+  isChecked,
+  option
+}) => (
   <li className="answerOption">
     <input
       type="radio"
       className="radioCustomButton"
       name="radioGroup"
-      id={answer}
-      value={option}
+      id={option}
+      value={answer}
       checked={isChecked}
       onChange={e => {
+        console.log(`Selected: ${e.target.value}`);
+        console.log(`Correct: ${correctAnswer}`);
         if (e.target.value === correctAnswer) {
           checkAnswer(true);
           console.log(true);
@@ -20,9 +28,7 @@ const AnswerOption = ({ answer, correctAnswer, checkAnswer, isChecked, option })
         }
       }}
     />
-    <label
-      className="radioCustomLabel"
-      htmlFor={answer}>
+    <label className="radioCustomLabel" htmlFor={answer}>
       {answer}
     </label>
   </li>
