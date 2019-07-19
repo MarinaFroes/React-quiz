@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import QuestionCount from "./Components/QuestionCount";
 import { allQuestions } from "./Components/allQuestions";
 import Quiz from "./Components/Quiz";
 import Result from "./Components/Result";
@@ -57,18 +56,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.state.questionId < 10 ? (
-          <div key={this.getQuestion}>
-            <QuestionCount
-              counter={this.state.questionId + 1}
-              total={allQuestions.length}
-            />
-            <Quiz
-              getQuestion={this.getQuestion}
-              checkAnswer={this.checkAnswer}
-              onSubmit={this.handleSubmit}
-            />
-          </div>
+        {this.state.questionId < allQuestions.length ? (
+          <Quiz
+            getQuestion={this.getQuestion}
+            checkAnswer={this.checkAnswer}
+            onSubmit={this.handleSubmit}
+            counter={this.state.questionId + 1}
+            total={allQuestions.length}
+          />
         ) : (
           <Result
             correctAnswers={this.state.correctAnswers}
