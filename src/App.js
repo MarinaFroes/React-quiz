@@ -32,16 +32,8 @@ class App extends React.Component {
   };
 
   checkAnswer = answer => {
-    if (answer) {
-      this.setState((prevState, props) => ({
-        correctAnswers: prevState.correctAnswers + 1
-      }));
-    }
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
     this.setState((prevState, props) => ({
+      correctAnswers: {answer} && prevState.correctAnswers + 1,
       questionId: prevState.questionId + 1
     }));
   };
@@ -60,7 +52,6 @@ class App extends React.Component {
           <Quiz
             getQuestion={this.getQuestion}
             checkAnswer={this.checkAnswer}
-            onSubmit={this.handleSubmit}
             counter={this.state.questionId + 1}
             total={allQuestions.length}
           />
