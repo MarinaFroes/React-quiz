@@ -3,6 +3,7 @@ import "./App.css";
 import QuestionCount from "./Components/QuestionCount";
 import { allQuestions } from "./Components/allQuestions";
 import Quiz from "./Components/Quiz";
+import Result from "./Components/Result";
 
 class App extends React.Component {
   state = {
@@ -42,14 +43,21 @@ class App extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.setState((prevState, props) => ({
-      questionId: prevState.questionId + 1,
-    }))
+      questionId: prevState.questionId + 1
+    }));
+  };
+
+  getNewGame = e => {
+    e.preventDefault();
+    this.setState((prevState, props) => ({
+      questionId: 0
+    }));
   };
 
   render() {
     return (
       <div className="App">
-        {this.state.questionId < 10 && (
+        {this.state.questionId < 10 ? (
           <div key={this.getQuestion}>
             <QuestionCount
               counter={this.state.questionId + 1}
@@ -61,6 +69,12 @@ class App extends React.Component {
               onSubmit={this.handleSubmit}
             />
           </div>
+        ) : (
+          <Result
+            correctAnswers={this.state.correctAnswers}
+            total={allQuestions.length}
+            playAgain={this.getNewGame}
+          />
         )}
 
         {console.log(`correct answers: ${this.state.correctAnswers}`)}
