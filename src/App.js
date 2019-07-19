@@ -9,31 +9,27 @@ class App extends React.Component {
     counter: 0,
     questionId: 0,
     question: "",
-    answerOptions: [],
+
     answer: "",
-    correctAnswers: 0,
-    result: ""
+    correctAnswers: 0
   };
 
   componentWillMount() {
     this.setState({
-      question: allQuestions[0].question,
-      answerOptions: allQuestions[0].answerOptions
+      question: allQuestions[0].question
     });
-    // console.log(this.state.question);
-    // console.log(this.state.answerOptions);
   }
 
-  getQuestion = () => {
-    if (this.state.questionId < 10) {
-      return allQuestions[this.state.questionId];
-    }
-    return;
-  };
+  getQuestion = () =>
+    this.state.questionId < 10 && allQuestions[this.state.questionId];
 
   checkAnswer = answer => {
+    if (answer) {
+      this.setState((prevState, props) => ({
+        correctAnswers: prevState.correctAnswers + 1
+      }));
+    }
     this.setState((prevState, props) => ({
-      correctAnswers: {answer} && prevState.correctAnswers + 1,
       questionId: prevState.questionId + 1
     }));
   };
