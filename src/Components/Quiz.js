@@ -1,38 +1,37 @@
 import React from "react";
 import Question from "./Question";
 import AnswerOption from "./AnswerOption";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Quiz = ({ getQuestion, checkAnswer, onSubmit }) => (
-  <form>
-    <Question content={getQuestion["question"]} />
+  <form onSubmit={onSubmit}>
+    <Question content={getQuestion()["question"]} />
     <AnswerOption
-      answer={getQuestion.answerOptions["a"]}
-      correctAnswer={getQuestion.correctAnswer}
+      answer={getQuestion().answerOptions["a"]}
+      correctAnswer={getQuestion().correctAnswer}
       checkAnswer={checkAnswer}
-      isChecked={true}
-      option="optionA"
+      option="A"
     />
     <AnswerOption
-      answer={getQuestion.answerOptions["b"]}
-      correctAnswer={getQuestion.correctAnswer}
+      answer={getQuestion().answerOptions["b"]}
+      correctAnswer={getQuestion().correctAnswer}
       checkAnswer={checkAnswer}
-      isChecked={false}
-      option="optionB"
+      option="B"
     />
     <AnswerOption
-      answer={getQuestion.answerOptions["c"]}
-      correctAnswer={getQuestion.correctAnswer}
+      answer={getQuestion().answerOptions["c"]}
+      correctAnswer={getQuestion().correctAnswer}
       checkAnswer={checkAnswer}
-      isChecked={false}
-      option="optionC"
+      option="C"
     />
-    <button type="submit" onClick={onSubmit}>Next</button>
+    <input type="submit" value="Submit" />
   </form>
 );
 
 export default Quiz;
 
-// Quiz.propTypes = {
-//   content: PropTypes.string.isRequired
-// };
+Quiz.propTypes = {
+  getQuestion: PropTypes.func.isRequired,
+  checkAnswer: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
+};
